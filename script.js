@@ -17,11 +17,14 @@ let date = `2020-10-0${dateCounter}`
 let urlWithApi = url + '?api_key=' + apiKey + `&date=${date}`
 //Add click event listener to left arrow button
     //On click, go to the previous day's APOD
+
+    let urlAllTogether = 
 lBtn.addEventListener('click', function(e){
     e.preventDefault()
     fetch(urlWithApi)
     .then(res=>res.json())
     .then(data => apod.src = data.url)
+    dateCounter = dateCounter--;
 })
 
 //Add click event listener to left arrow button
